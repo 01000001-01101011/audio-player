@@ -1,7 +1,10 @@
 <label for="audioFileChooser">Upload an audio file: </label><br><br>
-<input  id="audioFileChooser" type="file" onchange="readFile(this.files);">
+<input  id="audioFileChooser" type="file" onchange="soundFile = this.files">
+<input type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)"/>
 
 <script>
+	var soundFile;
+
 	function readFile(files) {
 		var fileReader = new FileReader();
 			fileReader.readAsArrayBuffer(files[0]);
