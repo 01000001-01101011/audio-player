@@ -2,6 +2,10 @@
 	.c {
 		font-family: Arial, Helvetica, sans-serif;
 	}
+	.b {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10vw;
+	}
 </style>
   
 
@@ -9,8 +13,14 @@
 <br><br>
 <input class="c" id="audioFileChooser" type="file" onchange="soundFile = this.files">
 <br><br><br>
-<input class="c" type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)"/>
-
+<center>
+<input class="b" type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)"
+style="
+  height: 80vh;
+  width: 90vw
+"
+/>
+</center>
 
 <script>
 	var soundFile;
