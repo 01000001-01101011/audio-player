@@ -1,6 +1,16 @@
-<label for="audioFileChooser">Upload an audio file: </label><br><br>
+<style>
+	.c {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+</style>
+  
+
+<label class="c" for="audioFileChooser"><b>Upload an audio file:</b> </label>
+<br><br>
 <input  id="audioFileChooser" type="file" onchange="soundFile = this.files">
+<br><br><br>
 <input type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)"/>
+
 
 <script>
 	var soundFile;
