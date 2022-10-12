@@ -16,7 +16,7 @@
 <body>
     <label class="c" for="audioFileChooser"><b>Upload an audio file:</b> </label>
     <br><br>
-    <input class="c" id="audioFileChooser" type="file" onchange="soundFile = this.files">
+    <input class="c" id="audioFileChooser" type="file" onchange="soundFile = this.files[0]">
     <br><br><br>
     <center>
         <input class="b" type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)" />
