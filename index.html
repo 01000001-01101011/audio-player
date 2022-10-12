@@ -1,46 +1,26 @@
-<style>
-	.c {
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	.b {
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 10vw;
-	}
-</style>
-  
+<!DOCTYPE html>
+<html>
 
-<label class="c" for="audioFileChooser"><b>Upload an audio file:</b> </label>
-<br><br>
-<input class="c" id="audioFileChooser" type="file" onchange="soundFile = this.files">
-<br><br><br>
-<center>
-<input class="b" type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)"
-style="
-  height: 80vh;
-  width: 90vw
-"
-/>
-</center>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Player</title>
 
-<script>
-	var soundFile;
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-	function readFile(files) {
-		var fileReader = new FileReader();
-			fileReader.readAsArrayBuffer(files[0]);
-			fileReader.onload = function(e) {
-				playAudioFile(e.target.result);
-				console.log(("Filename: '" + files[0].name + "'"), ( "(" + ((Math.floor(files[0].size/1024/1024*100))/100) + " MB)" ));
-			}
-	}
-	function playAudioFile(file) {
-		var context = new window.AudioContext();
-			context.decodeAudioData(file, function(buffer) {
-				var source = context.createBufferSource();
-					source.buffer = buffer;
-					source.loop = false;
-					source.connect(context.destination);
-					source.start(0); 
-			});
-	}
-</script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+    <label for="audioFileChooser"><b>Upload an audio file:</b> </label>
+    <br><br>
+    <input id="audioFileChooser" type="file" onchange="soundFile = this.files[0]">
+    <br><br><br>
+    <center>
+        <input type="submit" id="control" value="Play Sound" onclick="readFile(soundFile)" />
+    </center>
+</body>
+
+</html>
