@@ -1,5 +1,3 @@
-var soundFile;
-
 function readFile(soundFile) {
     const fileReader = new FileReader();
     fileReader.readAsArrayBuffer(soundFile);
